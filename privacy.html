@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>QuoteSync · 隐私说明</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<nav aria-label="网站导航"><a href="index.html">应用说明</a><a href="privacy.html" aria-current="page">隐私说明</a><a href="terms.html">使用条件</a></nav>
+<h1>QuoteSync 隐私说明</h1>
+<p>更新日期为 2026-11-05。本说明适用于由 Felix-So-Tan 维护、使用 Google 桌面 OAuth 授权的 QuoteSync 桌面同步程序。</p>
+<h2>访问和使用的数据</h2>
+<p>程序处理使用者选择的原文、来源标识、时间、参与者、附件元数据和消息编号，计算事件与批次校验值，并维护采集游标和传输回执。这些数据用于增量采集、去重、同步和故障恢复。</p>
+<p>Google Drive API 用于检查指定文件夹的上传权限，查询该文件夹中的同批次文件、上传原文 Markdown 并核对文件校验值。Google Sheets API 用于读写指定表格的 QuoteSync Inbox 标签，其中保存批次编号、校验值、原文链接、来源和消息数量。</p>
+<h2>存储和传输</h2>
+<p>原文事件、批次、游标和投递回执保存在设备上的本地 SQLite 队列。已授权批次的 Markdown 同步到指定的 Google Drive。批次索引及原文链接同步到指定 Google Sheets 和 Notion 页面。与这些服务的网络通信使用 HTTPS。</p>
+<p>Google 个人刷新令牌和 Notion 集成令牌保存在 Windows Credential Manager 或 macOS Keychain。Google 桌面应用的公共客户端注册随安装包提供。维护者取得的程序构建材料仅包含公共客户端注册，个人账号令牌在使用者设备中单独保存。</p>
+<h2>其他服务和人工访问</h2>
+<p>Google 与 Notion 按各自服务条款处理使用者保存的数据。使用者在 ChatGPT 中连接应用后，ChatGPT 按使用者的操作和授权访问相应资料。业务内容的模型处理由使用者选用的 ChatGPT 账号承担。</p>
+<p>QuoteSync 的数据用途限于使用者请求的原文采集和同步、产品支持及故障恢复。远程支持时，使用者自行决定授予的设备访问权限和分享的诊断资料。默认诊断信息省略凭据与消息正文。</p>
+<p>QuoteSync 对通过 Google API 获得的信息的使用及向其他应用的转移，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>，包括 Limited Use 要求。</p>
+<h2>保留、删除和撤销授权</h2>
+<p>暂停同步可停止后续采集与投递。使用者可在系统任务管理中移除 QuoteSync 后台任务，在系统凭据库中删除对应令牌，并在 <a href="https://myaccount.google.com/connections">Google 账号连接管理</a>撤销 QuoteSync 的授权。Notion 页面访问权限可在对应连接的 Content access 中修改。</p>
+<p>使用者可自行删除本机 QuoteSync 数据目录，以及本人云端接收位置中的同步文件和索引。卸载程序后，请根据保留需要分别管理本地队列、系统凭据和云端副本。</p>
+<h2>联系维护者</h2>
+<p>请通过收到安装包时的交付渠道联系维护者，或在 <a href="https://github.com/Felix-So-Tan/quotesync-site/issues">项目资料站反馈页</a>提交脱敏问题。涉及私密内容时，请先通过交付渠道约定处理方式。</p>
+</main></body></html>
